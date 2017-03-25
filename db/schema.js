@@ -9,23 +9,25 @@ var PhotosSchema = new Schema({
 });
 
 var PlacesSchema = new Schema({
-    name: String,
-    longitute: Number,
-    lattitude: Number,
-    state: String,
-    country: String,
-    description: String,
+    name: {type: String, required: true},
+    longitute: {type: Number, required: true},
+    lattitude: {type: Number, required: true},
+    state: {type: String, required: true},
+    country: {type: String, required: true},
+    description: {type: String, required: true},
     photos: [PhotosSchema]
 });
 
 var UserSchema = new Schema({
-    username: String,
-    email: String,
-    password: String,
+    username: {type: String, required: true},
+    email: {type: String, unique: true, required: true},
+    password: {type: String, required: true},
     places: [PlacesSchema],
     created_at: Date,
     updated_at: Date
 });
+
+UserSchema.index({email: 1, type: -1});
 
 PhotosSchema.pre('save', (next) => {
     now = new Date();

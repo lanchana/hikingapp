@@ -4,15 +4,15 @@ var User = require('../models/user.js');
 function createSecure(req, res, next) {
     var password = req.body.password;
 
-    res.hashedPassword = bcrypt.hashSync(password, bcrypt.getSaltSync(10));
+    res.hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     next();
 }
 
 function loginUser(req, res, next) {
     var email = req.body.email;
     var password = req.body.password;
-
-    User.finOne({email: email})
+    // use exec insted of then
+    User.findOne({email: email})
     .then((foundUser) => {
         if(foundUser == null) {
             res.json({status: 401, data:"Unauthorized"});

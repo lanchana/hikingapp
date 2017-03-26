@@ -2,12 +2,25 @@
 
 <ul>
     {{#each user.places}}
-    <li>{{this.name}}</li>
-    <li>{{../user.id}}</li>
-    <li>{{this.id}}</li>
+    <li>
+    <form action="/{{../user.id}}/places/{{this.id}}?_method=Delete" method="POST">
+        Hiking Place: {{this.name}}<input type="submit" value="DELETE">
+
+    </form>
+    </li>
+    <li>log & lat: {{this.longitude}}  {{this.latitude}}</li>
+    <li>Description: {{this.description}}</li>
+        {{#each this.photos}}
+        <ul>
+            <li>{{this.photo_url}}</li>
+            <li>{{this.name}}</li>
+        </ul>
+        {{/each}}
     <form action="/{{../user.id}}/{{this.id}}/photos/new">
     <input type="Submit" value="Add Photos">
 </form>
+
+
     {{/each}}
 </ul>
 

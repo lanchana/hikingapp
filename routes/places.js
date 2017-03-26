@@ -17,6 +17,18 @@ router.get('/new', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId, {
+        $pull: {
+            places: {_id: req.params.id}
+        }
+    })
+    .exec((err, deleted) => {
+        if(err) console.log(err);
+        res.redirect('/'+req.params.userId);
+    })
+})
+
 router.post('/', (req, res) => {
     console.log(req.body.name);
     User.findById(req.params.userId)

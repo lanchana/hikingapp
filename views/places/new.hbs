@@ -1,0 +1,30 @@
+<h1>{{user.id}} user</h1>
+<form action="/{{user.id}}/places" method="POST">
+    <div>
+        <label for="name">Nmae: </label>
+        <input type="text" name="name" required>
+    </div>
+    <div>
+        <label for="longitude">Longitude: </label>
+        <input type="text" name="longitude" required>
+    </div>
+    <div>
+        <label for="latitude">Latitude: </label>
+        <input type="text" name="latitude" required>
+    </div>
+    <div>
+        <label for="state">State: </label>
+        <input type="text" name="state">
+    </div>
+    <div>
+        <label for="country">Country: </label>
+        <input type="text" name="country">
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <input type="text" name="description" required>
+    </div>
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form>

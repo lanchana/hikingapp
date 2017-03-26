@@ -1,0 +1,29 @@
+<form action="/{{user}}/places/{{places.id}}?_method=PUT" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" value="{{places.name}}" required>
+    </div>
+    <div>
+        <label for="longitude">Longitude: </label>
+        <input type="text" name="longitude" value="{{places.longitude}}" required>
+    </div>
+    <div>
+        <label for="latitude">Latitude: </label>
+        <input type="text" name="latitude" value="{{places.latitude}}" required>
+    </div>
+    <div>
+        <label for="state">State: </label>
+        <input type="text" name="state" value="{{places.state}}">
+    </div>
+    <div>
+        <label for="country">Country: </label>
+        <input type="text" name="country" value="{{places.country}}">
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <input type="text" name="description" value="{{places.description}}" required>
+    </div>
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form>

@@ -41,7 +41,8 @@ router.post('/', (req, res) => {
                             res.json(status);
                         } else {
                             console.log('Success getting comments');
-                            res.json(data);
+                            // res.json(data);
+                            res.redirect('/'+req.params.userId);
                         }
                     })
                 }

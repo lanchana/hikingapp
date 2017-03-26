@@ -46,6 +46,7 @@ app.use('/sessions', sessionsRoute);
 app.use('/', users);
 app.use('/:userId/places/', placesRoute);
 app.use('/:userId/:placesId/photos/', photosRoute);
+app.use('/:placesId/photos/', photosRoute);
 
 
 // var db = mongoose.connection;

@@ -10,8 +10,8 @@ var PhotosSchema = new Schema({
 
 var PlacesSchema = new Schema({
     name: String,
-    longitute: String,
-    lattitude: String,
+    longitude: String,
+    latitude: String,
     state: String,
     country: String,
     description: String,

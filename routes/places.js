@@ -17,6 +17,36 @@ router.get('/new', (req, res) => {
     });
 });
 
+router.get('/:id/edit', (req, res) => {
+    User.findById(req.params.userId)
+    .exec((err, user) => {
+        if(err) console.log(err);
+        const places = user.places.id(req.params.id);
+        res.render('places/edit', {
+            places: places,
+            user: req.params.userId
+        });
+    });
+});
+
+router.put('/:id', (req, res) => {
+    User.findById(req.params.userId)
+    .exec((err, user) => {
+        if(err) console.log(err);
+        const placeList = user.places.id(req.params.id);
+        placeList.name = req.body.name,
+        placeList.longitude = req.body.longitude,
+        placeList.latitude = req.body.latitude,
+        placeList.state = req.body.state,
+        placeList.country = req.body.country,
+        placeList.description = req.body.description
+        user.save();
+        console.log('updated');
+        res.redirect('/'+req.params.userId);
+
+    })
+});
+
 router.delete('/:id', (req, res) => {
     User.findByIdAndUpdate(req.params.userId, {
         $pull: {

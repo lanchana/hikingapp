@@ -1,0 +1,14 @@
+<h1>photos: {{userId}} {{placesId}}</h1>
+<form action="/{{userId}}/{{placesId}}/photos/" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="photoUrl">URL: </label>
+        <input type="text" name="photoUrl" required>
+    </div>
+    <div>
+        <input type="submit" value="Add Photo Url">
+    </div>
+</form>

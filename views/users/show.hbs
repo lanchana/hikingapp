@@ -1,5 +1,16 @@
 <h1>Loged in</h1>
 
-<!-- <form action="/{{user.id}}/places/new">
-    <input type="Submit" name="Add New">
-</form> -->
+<ul>
+    {{#each user.places}}
+    <li>{{this.name}}</li>
+    <li>{{../user.id}}</li>
+    <li>{{this.id}}</li>
+    <form action="/{{../user.id}}/{{this.id}}/photos/new">
+    <input type="Submit" value="Add Photos">
+</form>
+    {{/each}}
+</ul>
+
+<form action="/{{user.id}}/places/new">
+    <input type="Submit" value="Add New">
+</form>

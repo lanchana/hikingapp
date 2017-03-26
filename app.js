@@ -1,3 +1,4 @@
+var pru = require('pryjs');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -14,7 +15,9 @@ mongoose.connect(process.env.MONGODB_URI);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var sessionsRoute = require('./routes/sessions')
+var sessionsRoute = require('./routes/sessions');
+var placesRoute = require('./routes/places');
+var photosRoute = require('./routes/photos');
 
 var app = express();
 
@@ -38,9 +41,12 @@ app.use(session({
 }));
 
 
-app.use('/', index);
+// app.use('/', index);
 app.use('/sessions', sessionsRoute);
-app.use('/users', users);
+app.use('/', users);
+app.use('/:userId/places/', placesRoute);
+app.use('/:userId/:placesId/photos/', photosRoute);
+
 
 // var db = mongoose.connection;
 

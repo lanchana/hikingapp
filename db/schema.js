@@ -9,12 +9,12 @@ var PhotosSchema = new Schema({
 });
 
 var PlacesSchema = new Schema({
-    name: {type: String, required: true},
-    longitute: {type: Number, required: true},
-    lattitude: {type: Number, required: true},
-    state: {type: String, required: true},
-    country: {type: String, required: true},
-    description: {type: String, required: true},
+    name: String,
+    longitute: String,
+    lattitude: String,
+    state: String,
+    country: String,
+    description: String,
     photos: [PhotosSchema]
 });
 

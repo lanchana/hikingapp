@@ -4,8 +4,8 @@ mongoose.Promise = global.Promise;
 
 
 var PhotosSchema = new Schema({
-    name: { type: String, strict: false, lean: true},
-    photo_url: { type: String, strict: false, lean: true}
+    name: String,
+    photo_url: String
 });
 
 var PlacesSchema = new Schema({
@@ -15,6 +15,7 @@ var PlacesSchema = new Schema({
     state: String,
     country: String,
     description: String,
+    place_url: String,
     photos: [PhotosSchema]
 });
 
@@ -24,7 +25,7 @@ var UserSchema = new Schema({
     password: {type: String, required: true},
     places: [PlacesSchema],
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
 });
 
 UserSchema.index({email: 1, type: -1});

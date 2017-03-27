@@ -1,17 +1,15 @@
-<div class="login-background z-depth-2">
-</div>
+{{>loginheader}}
+
+
+
+
+<!-- <div class="login-background z-depth-2">
+</div> -->
 <form action="/sessions/login" method="POST">
 
 <main class="container login-container">
-<section class="col-md-6 col-sm-6 col-xs-6 welcome-msg ">
-    <h2>Combine serious wanderlust with a hunger for
-        scenic views, and what do you get? The best
-        long-distance hiking trails in the US. From
-        the most popular ones to lesser-known gems,
-        these trails are made for walking
-    </h2>
-</section>
-<section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4">
+{{>loginMsg}}
+<section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4 hoverable">
 <div >
     <h1>Hiking Trails</h1>
 </div>

@@ -21,20 +21,14 @@
 
 
 
-<div class="login-background">
-</div>
+<!-- <div class="login-background">
+</div> -->
+{{>loginheader}}
 <form action="/" method="POST">
 
 <main class="container login-container">
-<section class="col-md-6 col-sm-6 col-xs-6 welcome-msg ">
-    <h2>Combine serious wanderlust with a hunger for
-        scenic views, and what do you get? The best
-        long-distance hiking trails in the US. From
-        the most popular ones to lesser-known gems,
-        these trails are made for walking
-    </h2>
-</section>
-<section class="col-md-4 col-sm-6 col-xs-6 login">
+{{>loginMsg}}
+<section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4 hoverable">
 <div >
     <h1>Hiking Trails</h1>
 </div>

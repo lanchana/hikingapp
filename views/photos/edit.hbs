@@ -1,8 +1,4 @@
 
-
-    <!-- {{#each places.placesId}}
-        <h1>this.name</h1>
-    {{/each}} -->
     {{#each photos}}
 
     <div>
@@ -20,3 +16,6 @@
 
 
     {{/each}}
+    <form action="/{{userId}}/places/{{placesId}}/show">
+        <input type="submit" value="Back">
+    </form>

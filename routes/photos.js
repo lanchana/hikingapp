@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
         var place = user.places.id(req.params.placesId)
         place.photos.push({name: req.body.name, photo_url: req.body.photoUrl })
         user.save();
-        res.redirect('/'+req.params.userId);
+        res.redirect('/'+req.params.userId+'/places/'+req.params.placesId+'/show');
     });
 
 
@@ -66,7 +66,7 @@ router.delete('/:id', (req, res) => {
         var place = user.places.id(req.params.placesId)
         place.photos.pull(req.params.id)
         user.save();
-        res.redirect('/userId//edit')
+        res.redirect('/'+req.params.userId+'/'+req.params.placesId+'/photos/edit')
     });
 });
 

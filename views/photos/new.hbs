@@ -1,4 +1,4 @@
-<h1>photos: {{userId}} {{placesId}}</h1>
+
 <form action="/{{userId}}/{{placesId}}/photos/" method="POST">
     <div>
         <label for="name">Name: </label>
@@ -6,9 +6,12 @@
     </div>
     <div>
         <label for="photoUrl">URL: </label>
-        <input type="text" name="photoUrl" required>
+        <input type="url" name="photoUrl"  pattern="https?://.+" required>
     </div>
     <div>
         <input type="submit" value="Add Photo Url">
     </div>
+</form>
+<form action="/{{userId}}/places/{{placesId}}/show">
+    <input type="submit" value="back">
 </form>

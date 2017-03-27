@@ -1,15 +1,35 @@
+<div class="login-background z-depth-2">
+</div>
 <form action="/sessions/login" method="POST">
-<div>
-    <label for="email">Email:</label>
-    <input type="text" name="email">
-</div>
-<div>
-    <label for="password">Password:</label>
-    <input type="text" name="password">
-</div>
-<div>
-    <input type="submit" value="Login">
-    <a href="/signup">SignUP</a>
-</div>
 
+<main class="container login-container">
+<section class="col-md-6 col-sm-6 col-xs-6 welcome-msg ">
+    <h2>Combine serious wanderlust with a hunger for
+        scenic views, and what do you get? The best
+        long-distance hiking trails in the US. From
+        the most popular ones to lesser-known gems,
+        these trails are made for walking
+    </h2>
+</section>
+<section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4">
+<div >
+    <h1>Hiking Trails</h1>
+</div>
+<div class="col-md-12">
+
+    <input type="email" name="email" class="col-md-6 text-size" placeholder="Email" required>
+</div>
+<div class="col-md-12">
+
+    <input type="password" name="password" class="col-md-8 text-size" placeholder="Password">
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 login-button">
+    <input type="submit" value="Login" class="btn btn-primary btn-sm btn-block">
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 login-button signup">
+    Dont have an account? <a class="" href="/signup" >SignUp</a>
+</div>
+</section>
+</main>
 </form>
+

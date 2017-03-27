@@ -1,0 +1,33 @@
+{{>header}}
+
+
+<div>{{places.name}}</div>
+<div>{{places.longitude}}</div>
+<div>{{places.latitude}}</div>
+<div>{{places.state}}</div>
+<div>{{places.country}}</div>
+<div>{{places.description}}</div>
+<div></div>
+{{#each places.photos}}
+
+        <ul>
+            <li>{{this.photo_url}}</li>
+
+            <li><img src="{{this.photo_url}}" alt="Photos"></li>
+            <li>{{this.name}}</li>
+
+
+        </ul>
+{{/each}}
+<!-- <button type="submit">Back</button> -->
+<form action="/{{user}}">
+<input type="submit" value="Back">
+
+</form>
+<form action="/{{user}}/{{places.id}}/photos/new">
+    <input type="submit" value="Add more Photos">
+</form>
+
+<form action="/{{user}}/{{places.id}}/photos/edit">
+                <input type="Submit" value="Delete Photos">
+            </form>

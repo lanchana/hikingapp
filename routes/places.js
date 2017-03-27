@@ -17,6 +17,19 @@ router.get('/new', (req, res) => {
     });
 });
 
+router.get('/:id/show', (req, res) => {
+    User.findById(req.params.userId)
+    .exec((err, user) => {
+        if(err) console.log(err);
+        const places = user.places.id(req.params.id);
+        res.render('places/show', {
+            places: places,
+            user: req.params.userId
+        });
+    });
+});
+
+
 router.get('/:id/edit', (req, res) => {
     User.findById(req.params.userId)
     .exec((err, user) => {
@@ -30,16 +43,19 @@ router.get('/:id/edit', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+
     User.findById(req.params.userId)
     .exec((err, user) => {
         if(err) console.log(err);
+        console.log(req.body.url);
         const placeList = user.places.id(req.params.id);
         placeList.name = req.body.name,
         placeList.longitude = req.body.longitude,
         placeList.latitude = req.body.latitude,
         placeList.state = req.body.state,
         placeList.country = req.body.country,
-        placeList.description = req.body.description
+        placeList.description = req.body.description,
+        placeList.place_url = req.body.url
         user.save();
         console.log('updated');
         res.redirect('/'+req.params.userId);
@@ -70,7 +86,8 @@ router.post('/', (req, res) => {
             latitude: req.body.latitude,
             state: req.body.state,
             country: req.body.country,
-            description: req.body.description
+            description: req.body.description,
+            place_url: req.body.url
         });
         user.places.push(newplace);
         user.save((err) => {

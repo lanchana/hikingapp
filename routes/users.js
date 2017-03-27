@@ -26,11 +26,31 @@ router.get('/:id', authHelper.createSecure, (req, res) => {
         if(err) {
             res.send('Invalid username or password');
         }
+        // res.render('users/show.hbs', {
+        //     user: user
+        // });
+        res.render('users/index.hbs', {
+            user: user
+        });
+    })
+});
+
+router.get('/:id/show', authHelper.createSecure, (req, res) => {
+    User.findById(req.params.id)
+    .exec((err, user) => {
+        if(err) {
+            res.send('Invalid username or password');
+        }
+        // res.render('users/show.hbs', {
+        //     user: user
+        // });
         res.render('users/show.hbs', {
             user: user
         });
     })
-})
+});
+
+
 
 router.post('/', authHelper.createSecure, (req, res) => {
     console.log(req.body.email);

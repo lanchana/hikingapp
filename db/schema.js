@@ -4,8 +4,8 @@ mongoose.Promise = global.Promise;
 
 
 var PhotosSchema = new Schema({
-    name: String,
-    photo_url: String
+    name: { type: String, strict: false, lean: true},
+    photo_url: { type: String, strict: false, lean: true}
 });
 
 var PlacesSchema = new Schema({

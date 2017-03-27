@@ -19,14 +19,16 @@
             <li>{{this.photo_url}}</li>
             <li>{{this.name}}</li>
 
-            <form action="/{{../../user.id}}/{{../../places.id}}/photos/{{this.id}}?_method=DELETE" method="POST">
-            <input type="submit" Value="Delete Photo">
-            </form>
+
         </ul>
         {{/each}}
     <form action="/{{../user.id}}/{{this.id}}/photos/new">
     <input type="Submit" value="Add Photos">
 </form>
+<form action="/{{../user.id}}/{{this.id}}/photos/edit">
+    <input type="Submit" value="Delete Photos">
+</form>
+
 
 
     {{/each}}

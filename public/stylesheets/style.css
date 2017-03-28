@@ -116,7 +116,7 @@ a:hover {
 
 .info:hover,
 .edit:hover {
-    color: yellow;
+    color: #01579b;
 }
 .delete:hover {
     color: red;

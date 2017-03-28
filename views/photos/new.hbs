@@ -1,17 +1,17 @@
-
+{{>header}}
+<div class="col-md-6 new-place z-depth-4 hoverable">
 <form action="/{{userId}}/{{placesId}}/photos/" method="POST">
     <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name">
+        <!-- <label for="name">Name: </label> -->
+        <input type="text" name="name" placeholder="Name">
     </div>
     <div>
-        <label for="photoUrl">URL: </label>
-        <input type="url" name="photoUrl"  pattern="https?://.+" required>
+        <!-- <label for="photoUrl">URL: </label> -->
+        <input type="url" name="photoUrl"  pattern="https?://.+" required placeholder="Image Url">
     </div>
-    <div>
-        <input type="submit" value="Add Photo Url">
+    <div class="add-button center col-md-12">
+        <input type="submit" value="Add" class="btn btn-success">
+        <a href="/{{userId}}/places/{{placesId}}/show" class="btn btn-danger">Cancel</a>
     </div>
 </form>
-<form action="/{{userId}}/places/{{placesId}}/show">
-    <input type="submit" value="back">
-</form>
+</div>

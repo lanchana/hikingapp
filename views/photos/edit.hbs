@@ -1,21 +1,32 @@
-
+<div>
     {{#each photos}}
+<div class="col-md-3 col-sm-6 col-xs-12 z-depth-4 hoverable new-photo">
+    <div class="center">
+<h4 class="col-md-12 col-sm-12" >{{this.name}}</h4>
 
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" value={{this.name}}>
+
+        <!-- <label for="name">Name: </label> -->
+        <!-- <input type="text" name="name" value={{this.name}} placeholder="Name"> -->
     </div>
     <div>
-        <label for="photoUrl">URL: </label>
-        <input type="text" name="photoUrl" value="{{this.photo_url}}" required>
+        <!-- <label for="photoUrl">URL: </label> -->
+        <!-- <input type="text" name="photoUrl" value="{{this.photo_url}}" required placeholder="Photo Url" pattern="https?://.+"> -->
+        <img class="col-md-12 col-sm-12 col-xs-12" src="{{this.photo_url}}">
     </div>
+    <div class="center ">
+        <form action="/{{../userId}}/{{../placesId}}/photos/{{this.id}}?_method=DELETE" method="POST">
 
-    <form action="/{{../userId}}/{{../placesId}}/photos/{{this.id}}?_method=DELETE" method="POST">
-    <input type="submit" Value="Delete">
+    <input type="submit" Value="Delete" class="btn btn-danger add-button">
 </form>
+    </div>
+
+</div>
 
 
     {{/each}}
-    <form action="/{{userId}}/places/{{placesId}}/show">
-        <input type="submit" value="Back">
+</div>
+<div class = "center">
+<form action="/{{userId}}/places/{{placesId}}/show">
+        <input type="submit" value="Back" class="btn btn-success add-button center">
     </form>
+    </div>

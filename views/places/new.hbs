@@ -21,14 +21,14 @@
     <div>
         <!-- <label for="description">Description: </label> -->
         <!-- <textarea name="description" cols="40" rows="5"></textarea> -->
-        <input type="text" rows="5" name="description" required placeholder="Description">
+        <input type="text" rows="5" name="description" required placeholder="Description" class="flow-text">
     </div>
     <div>
         <!-- <label for="url">Url: </label> -->
         <input type="url" name="url" required placeholder="Image Url" pattern="https?://.+">
     </div>
     <div class="add-button center col-md-12">
-        <input type="submit" value="Add" class="btn btn-primary">
+        <input type="submit" value="Add" class="btn btn-success">
         <a href="/{{user.id}}" class="btn btn-danger">Cancel</a>
     </div>
 

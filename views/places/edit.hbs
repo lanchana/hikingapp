@@ -1,35 +1,37 @@
 {{>header}}
-
+<div class="col-md-6 new-place z-depth-4 hoverable">
 <form action="/{{user}}/places/{{places.id}}?_method=PUT" method="POST">
     <div>
         <!-- <label for="name">Name: </label> -->
         <input type="text" name="name" value="{{places.name}}" required placeholder="Name">
     </div>
     <div>
-        <label for="longitude">Longitude: </label>
-        <input type="text" name="longitude" value="{{places.longitude}}" required>
+        <!-- <label for="longitude">Longitude: </label> -->
+        <input type="number" name="longitude" value="{{places.longitude}}" required placeholder="Longitude">
     </div>
     <div>
-        <label for="latitude">Latitude: </label>
-        <input type="text" name="latitude" value="{{places.latitude}}" required>
+        <!-- <label for="latitude">Latitude: </label> -->
+        <input type="number" name="latitude" value="{{places.latitude}}" required placeholder="Latitude">
     </div>
     <div>
-        <label for="state">State: </label>
-        <input type="text" name="state" value="{{places.state}}">
+        <!-- <label for="state">State: </label> -->
+        <input type="text" name="state" value="{{places.state}}" placeholder="State">
     </div>
     <div>
-        <label for="country">Country: </label>
-        <input type="text" name="country" value="{{places.country}}">
+        <!-- <label for="country">Country: </label> -->
+        <input type="text" name="country" value="{{places.country}}" placeholder="Country">
     </div>
     <div>
-        <label for="description">Description: </label>
-        <input type="text" name="description" value="{{places.description}}" required>
+        <!-- <label for="description">Description: </label> -->
+        <input type="text" name="description" value="{{places.description}}" required placeholder="Description">
     </div>
     <div>
-        <label for="url">Url: </label>
-        <input type="text" name="url" value="{{places.place_url}}" required>
+        <!-- <label for="url">Url: </label> -->
+        <input type="text" name="url" value="{{places.place_url}}" required placeholder="Image URL">
     </div>
-    <div>
-        <input type="submit" value="submit">
+    <div class="add-button center">
+        <input type="submit" value="submit" class="btn btn-success">
+        <a href="/{{user}}" class="btn btn-danger">Cancel</a>
     </div>
 </form>
+</div>

@@ -1,12 +1,16 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+
+// Use native promises
 mongoose.Promise = global.Promise;
 
+// Creates photos object for places
 var PhotosSchema = new Schema({
     name: String,
     photo_url: String
 });
 
+// Creates places object for user
 var PlacesSchema = new Schema({
     name: String,
     longitude: String,
@@ -18,6 +22,7 @@ var PlacesSchema = new Schema({
     photos: [PhotosSchema]
 });
 
+// This the main user table
 var UserSchema = new Schema({
     username: {type: String, required: true},
     email: {type: String, unique: true, required: true},

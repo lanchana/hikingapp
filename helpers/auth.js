@@ -3,7 +3,7 @@ var User = require('../models/user.js');
 
 function createSecure(req, res, next) {
     var password = req.body.password;
-
+    // It decript a hashed password and checks for the match
     res.hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     next();
 }
@@ -15,10 +15,13 @@ function loginUser(req, res, next) {
     User.findOne({email: email})
     .then((foundUser) => {
         if(foundUser == null) {
+            // When user gives the wrong email, it will redirect in to login page
             res.redirect('/');
         } else if(bcrypt.compareSync(password, foundUser.password)) {
+            // if email id is coreect then this block cheks for password, if it finds the matchthen it retuns the founduser data
             req.session.currentUser = foundUser;
         } else {
+            // if it doesnt find the right password then it will redirect to main page
             res.redirect('/');
         }
         next();
@@ -28,6 +31,7 @@ function loginUser(req, res, next) {
     });
 }
 
+// that checks if the CurrentUser's id matches the id in params your code here
 function authorized(req, res, next) {
     var currentUser = req.session.currentUser;
     if(!currentUser || currentUser._id != req.params.id) {
@@ -37,6 +41,7 @@ function authorized(req, res, next) {
     }
 };
 
+// Exports the below functions
 module.exports = {
     createSecure: createSecure,
     loginUser: loginUser,

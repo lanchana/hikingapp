@@ -1,7 +1,9 @@
+{{>header}}
+
 <form action="/{{user}}/places/{{places.id}}?_method=PUT" method="POST">
     <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" value="{{places.name}}" required>
+        <!-- <label for="name">Name: </label> -->
+        <input type="text" name="name" value="{{places.name}}" required placeholder="Name">
     </div>
     <div>
         <label for="longitude">Longitude: </label>
@@ -22,6 +24,10 @@
     <div>
         <label for="description">Description: </label>
         <input type="text" name="description" value="{{places.description}}" required>
+    </div>
+    <div>
+        <label for="url">Url: </label>
+        <input type="text" name="url" value="{{places.place_url}}" required>
     </div>
     <div>
         <input type="submit" value="submit">

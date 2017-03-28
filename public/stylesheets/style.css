@@ -102,6 +102,13 @@ a:hover {
     text-decoration: none;
 }
 
+.info:hover,
+.edit:hover {
+    color: yellow;
+}
+.delete:hover {
+    color: red;
+}
 .login-container {
     position: absolute;
     top: 15em;

@@ -14,6 +14,7 @@ var hbs = require('hbs');
 require('dotenv').config()
 mongoose.connect(process.env.MONGODB_URI);
 
+// Getting the router files
 var index = require('./routes/index');
 var users = require('./routes/users');
 var sessionsRoute = require('./routes/sessions');
@@ -26,6 +27,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// Gets the partial files
 hbs.registerPartials(__dirname + '/views/partials');
 
 // uncomment after placing your favicon in /public
@@ -38,29 +40,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use(session({
-    secret: "thesecretcodeistopsecret",
-    resave: false,
-    saveUninitialized: false
+  secret: "thesecretcodeistopsecret",
+  resave: false,
+  saveUninitialized: false
 }));
 
 
-// app.use('/', index);
+// Redirects into routers based on the user choice
 app.use('/sessions', sessionsRoute);
 app.use('/', users);
 app.use('/:userId/places/', placesRoute);
 app.use('/:userId/:placesId/photos/', photosRoute);
 app.use('/:placesId/photos/', photosRoute);
-
-
-// var db = mongoose.connection;
-
-// db.on('error', (err) => {
-//     console.log(err);
-// });
-
-// db.once('open', () => {
-//     console.log('Database has been connected!');
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

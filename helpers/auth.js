@@ -11,11 +11,10 @@ function createSecure(req, res, next) {
 function loginUser(req, res, next) {
     var email = req.body.email;
     var password = req.body.password;
-    // use exec insted of then
+
     User.findOne({email: email})
     .then((foundUser) => {
         if(foundUser == null) {
-            // res.json({status: 401, data:"Unauthorized"});
             res.redirect('/');
         } else if(bcrypt.compareSync(password, foundUser.password)) {
             req.session.currentUser = foundUser;

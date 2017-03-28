@@ -15,9 +15,12 @@ function loginUser(req, res, next) {
     User.findOne({email: email})
     .then((foundUser) => {
         if(foundUser == null) {
-            res.json({status: 401, data:"Unauthorized"});
+            // res.json({status: 401, data:"Unauthorized"});
+            res.redirect('/');
         } else if(bcrypt.compareSync(password, foundUser.password)) {
             req.session.currentUser = foundUser;
+        } else {
+            res.redirect('/');
         }
         next();
     })

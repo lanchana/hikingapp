@@ -1,44 +1,65 @@
 {{>header}}
+<div class="placesshow">
+<div class="placesshow-header">
+<div> <span class="placesshow-text text-uppercase">{{places.name}}</span><span> {{places.state}}</span></div>
+</div>
+<div class="placesshow-desc">{{places.description}}</div>
 
-<div>{{places.name}}</div>
-<div>{{places.longitude}}</div>
-<div>{{places.latitude}}</div>
-<div>{{places.state}}</div>
-<div>{{places.country}}</div>
-<div>{{places.description}}</div>
-<div></div>
+
+
+<div class="">Photos from this hike</div>
+<div class="placephoto">
 {{#each places.photos}}
 
-        <ul>
-            <li>{{this.photo_url}}</li>
-
-            <li><img src="{{this.photo_url}}" alt="Photos"></li>
-            <li>{{this.name}}</li>
-
-
-        </ul>
+<div class="col-md-3 col-sm-12 col-xs-12 z-depth-4 hoverable photo-center">
+    <div class="center">
+<h4 class="col-md-12 col-sm-12" >{{this.name}}</h4>
+    </div>
+    <div>
+        <img class="col-md-12 col-sm-12 col-xs-12" src="{{this.photo_url}}">
+    </div>
+    </div>
 {{/each}}
+</div>
+<div class="col-md-12">
+<span class="gps-header">GPS Co-ordinates:</span><span class="gps-co">  {{places.latitude}} &{{places.longitude}}</span>
+<!-- <div>Google</div> -->
+<div id="map" style="width:100%;height:400px;"></div>
+</div>
+
+<div class="col-md-12 places-showbtn">
 <!-- <button type="submit">Back</button> -->
 <form action="/{{user}}">
-<input type="submit" value="Back">
+<input type="submit" value="Back" class="btn btn-default col-md-3 add-button">
 
 </form>
 <form action="/{{user}}/{{places.id}}/photos/new">
-    <input type="submit" value="Add more Photos">
+    <input type="submit" value="Add more Photos" class="btn btn-default col-md-3 add-button">
 </form>
 
 <form action="/{{user}}/{{places.id}}/photos/edit">
-                <input type="Submit" value="Delete Photos">
+                <input type="Submit" value="Delete Photos" class="btn btn-danger col-md-3 add-button">
             </form>
- <div id="map" style="width:100%;height:400px;"></div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
 
 <script>
 function myMap() {
 
   var myCenter = new google.maps.LatLng({{places.latitude}},{{places.longitude}});
   var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 8,
-  mapTypeId:google.maps.MapTypeId.HYBRID};
+  var mapOptions = {center: myCenter, zoom: 13,
+  mapTypeId:google.maps.MapTypeId.HYBRID, draggable: false};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
@@ -53,3 +74,4 @@ function myMap() {
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbFzX-rQuiHEI1DbnZJQNQ1Wfud9Mpyiw&callback=myMap"></script>
+</div>

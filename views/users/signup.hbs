@@ -1,57 +1,40 @@
-<!-- <form action="/" method="POST">
-<div>
-    <label for="email">Email<sup>*</sup>: </label>
-    <input type="email" name="email" title="Must be in this pattern: example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="email" required>
-</div>
-<div>
-    <label for="password">Password<sup>*</sup>: </label>
-    <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password" required>
-</div>
-<div>
-    <label for="username">Username<sup>*</sup>:</label>
-    <input type="text" name="username" required>
-</div>
-<div>
-    <input type="submit" value="SignUp">
-</div>
+<!-- This is a signup page -->
 
-</form>
- -->
-
-
-
-
-<!-- <div class="login-background">
-</div> -->
+<!-- this will include the loginheader file content from partial -->
 {{>loginheader}}
+
 <form action="/" method="POST">
+    <main class="container login-container">
+        <!-- This will include loginMsg file content from partials -->
+        {{>loginMsg}}
 
-<main class="container login-container">
-{{>loginMsg}}
-<section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4 hoverable">
-<div >
-    <h1>Hiking Trails</h1>
-</div>
-<div class="col-md-12">
+        <!-- This section is for signup box -->
+        <section class="col-md-4 col-sm-6 col-xs-6 login z-depth-4 hoverable">
+            <div >
+                <h1>Hiking Trails</h1>
+            </div>
 
-    <input type="email" name="email" title="Must be in this pattern: example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
-</div>
-<div class="col-md-12">
+            <div class="col-md-12">
+                <!-- this will validate the user email based on the pattren -->
+                <input type="email" name="email" title="Must be in this pattern: example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
+            </div>
 
-    <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password" required>
-</div>
-<div class="col-md-12">
-    <!-- <label for="username">Username<sup>*</sup>:</label -->
-    <input type="text" name="username" placeholder="Username" required>
-</div>
-<div class="col-md-12 col-sm-12 col-xs-12 login-button">
-    <input type="submit" value="SignUp" class="btn btn-primary btn-sm btn-block">
-    </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 login-button signup">
-    Have an account? <a class="" href="/" >LogIn</a>
-</div>
+            <div class="col-md-12">
+                <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password" required>
+            </div>
 
-</section>
-</main>
+            <div class="col-md-12">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 login-button">
+                <input type="submit" value="SignUp" class="btn btn-primary btn-sm btn-block">
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 login-button signup">
+                Have an account? <a class="" href="/" >LogIn</a>
+            </div>
+        </section>
+    </main>
 </form>
 

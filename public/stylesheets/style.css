@@ -1,56 +1,20 @@
 body {
-display: flex;
+    display: flex;
     min-height: 100vh;
     flex-direction: column;
-       font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.carousel {
-    height: 22em;
-    width: 70%;
-    margin: 0 auto;
-}
-
-.carousel img {
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  margin: 0 auto;
-  min-width: 100%;
-  /*max-height: 30%;*/
-}
-
-.header-text {
-    font-weight: bolder;
-}
-.logout {
-    font-size: 1em;
-    height: 60px;
-    border: none;
-}
-
-.header-text:hover,
-.logout:hover {
-    color: yellow;
-    text-decoration: none;
-}
-
-
-.text-size {
-    height: 3rem;
-    font-size: 2rem;
+main {
+    flex: 1 0 auto;
 }
 
 a {
   color: #00B7FF;
 }
 
-.welcome-msg {
-    padding: 7em 2em 2em;
-    /*border: solid 1px black;*/
-    /*margin-left: 5em;*/
-
-
+a:hover {
+    text-decoration: none;
 }
 
 h1 {
@@ -59,7 +23,6 @@ h1 {
     color: #fafafa;
     margin: 0.6em 0;
     text-shadow: 2px 2px 5px #424242;
-
 }
 
 h2 {
@@ -68,34 +31,79 @@ h2 {
     text-indent: 50px;
     color: #9e9e9e;
     text-shadow: 2px 2px 5px #e0e0e0 ;
-    /*font-family: 'Josefin Sans', sans-serif;*/
-    /*font-weight: 400px;*/
-    /*font-size: 2em;*/
 }
-    /*background: url('../images/Screen Shot 2017-03-26 at 10.39.51 PM.jpg');*/
-    /*background-size: contain;*/
-    /*height: 15em;*/
 
+footer {
+    position: relative;
+}
+
+/*------------------------------------------------------------*/
+/*These are in views/partials/loginheader file*/
+
+/*Set the carousel size and position on login and signup pages*/
+.carousel {
+    height: 22em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.carousel img {
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+.signup {
+    padding-top: 1em;
+}
+
+/*------------------------------------------------------------*/
+/*These are form file views/partials/header*/
+
+/*It is used to header text for the headers in user pages */
+.header-text {
+    font-weight: bolder;
+}
+
+/*Its sets the size of logout button on header*/
+.logout {
+    font-size: 1em;
+    height: 60px;
+    border: none;
+}
+
+/*It cjanges the header text color on hover*/
+.header-text:hover,
+.logout:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+/*------------------------------------------------------------------*/
+/*This used in views/partials/loginMsg*/
+.welcome-msg {
+    padding: 7em 2em 2em;
+}
+
+/*------------------------------------------------------------------*/
+/*Thsese are used in views/user/login file*/
+
+/*It sets the position of welcome message and login/signup box*/
+.login-container {
+    position: absolute;
+    top: 15em;
+    left: 13%;
+    right: 15%;
+}
 
 .login {
-    /*padding: 2em 0 2em 3em;*/
-    /*border: solid 1px black;*/
     padding: 1em 1em 5em;
     margin-left: 2em;
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-
 }
 
-.index-photo-name {
-    margin-bottom: 1em;
-}
-
-.user-image {
-    /*height: 25em;*/
-    /*min-width: 25em;*/
-}
-.btn-primary {
-    /*padding: */
+/*this is for login or signup text like email, password, username*/
+.text-size {
+    height: 3rem;
+    font-size: 2rem;
 }
 
 .login-button {
@@ -103,82 +111,54 @@ h2 {
     width: 100%;
 }
 
-.signup {
-    /*padding-top: 10em;*/
-    padding-top: 1em;
+/*------------------------------------------------------------------*/
+/*These are in views/user/index*/
+
+/*Sets the container width of main section*/
+.main-image,
+.new-place {
+    margin: 2em auto;
 }
 
-a:hover {
-    text-decoration: none;
+/*Sets space around each photo thumbnail*/
+.index-photo-name {
+    margin-bottom: 1em;
 }
 
-
-
+/*The following two changes color of button's text on hover*/
 .info:hover,
 .edit:hover {
     color: #01579b;
 }
+
 .delete:hover {
     color: red;
 }
-.login-container {
-    position: absolute;
-    top: 15em;
-    left: 13%;
-    right: 15%;
-    /*margin: 3em auto;*/
-    /*margin-top: 8em;*/
-}
-.main-image,
-.new-place {
-    /*float: left;*/
-    margin: 2em auto;
-    /*text-align: center;*/
-}
-.new-place {
-    margin: 6em auto;
-    padding-top: 2em;
-}
 
-.new-photo {
-    margin: 2em;
-    padding: 2em;
-}
-
-.photo {
-    /*margin: 0 auto;*/
-    /*text-align: center;*/
-    /*padding-left: 5em;*/
-}
-
+/*Sets the space arounr add new button*/
 .add-button {
     margin: 2em;
 }
 
-.placesPhoto {
-    margin: 0 auto;
-    width: 80%;
+.user-image {
+    width: 100%;
 }
 
+/*------------------------------------------------------------------*/
+/*These are from views/places/show file*/
 
-.placephoto {
-    /*margin-left: 10em;*/
-}
-.photo-center {
-    margin: 2em 2em 2em 0;
-    padding-bottom: 1em;
-    margin-left: 4em;
-}
-
+/*Sets the width of the main division*/
 .placesshow {
     width: 80%;
     margin: 0 auto;
 }
 
+/*sets the size of entire place section*/
 .placesshow-header {
     margin: 2em 0;
 }
 
+/*Sets the size of place name on */
 .placesshow-text {
     font-size: 4em;
     text-align: center;
@@ -188,8 +168,15 @@ a:hover {
 
 }
 
+/*Places description*/
 .placesshow-desc {
     font-size: 2em;
+}
+
+.photo-center {
+    margin: 2em 2em 2em 0;
+    padding-bottom: 1em;
+    margin-left: 4em;
 }
 
 .gps {
@@ -205,12 +192,12 @@ a:hover {
     font-weight: 100;
 }
 
-.user-image {
-    width: 100%;
-}
+/*------------------------------------------------------------------*/
+/*these are in views/places/new and edit*/
 
-.places-showbtn {
-    /*margin: 2em;*/
+.new-place {
+    margin: 6em auto;
+    padding-top: 2em;
 }
 
 .placesshowphotos-header {
@@ -219,22 +206,15 @@ a:hover {
     font-weight: bold;
 }
 
-/*.places-show-photo {
-    max-height: 30em;
-    max-width: 60em;
-    width: 100%;
-    float: left;
+/*------------------------------------------------------------------*/
+/*These are in views/photos/edit*/
 
-}*/
-
-#map {
-    /*margin: 0 auto;*/
+.new-photo {
+    margin: 2em;
+    padding: 2em;
 }
 
-main {
-    flex: 1 0 auto;
-}
-
-footer {
-    position: relative;
+.placesPhoto {
+    margin: 0 auto;
+    width: 80%;
 }

@@ -1,6 +1,5 @@
 {{>header}}
 
-
 <div>{{places.name}}</div>
 <div>{{places.longitude}}</div>
 <div>{{places.latitude}}</div>
@@ -31,3 +30,26 @@
 <form action="/{{user}}/{{places.id}}/photos/edit">
                 <input type="Submit" value="Delete Photos">
             </form>
+ <div id="map" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+
+  var myCenter = new google.maps.LatLng({{places.latitude}},{{places.longitude}});
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 8,
+  mapTypeId:google.maps.MapTypeId.HYBRID};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  google.maps.event.addListener(marker,'click',function() {
+    // console.log({{places.name}});
+    var infowindow = new google.maps.InfoWindow({
+      content: "{{places.name}}"
+    });
+  infowindow.open(map,marker);
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbFzX-rQuiHEI1DbnZJQNQ1Wfud9Mpyiw&callback=myMap"></script>

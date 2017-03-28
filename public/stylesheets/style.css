@@ -213,7 +213,11 @@ a:hover {
     /*margin: 2em;*/
 }
 
-
+.placesshowphotos-header {
+    margin-top: 2em;
+    font-size: 2em;
+    font-weight: bold;
+}
 
 /*.places-show-photo {
     max-height: 30em;

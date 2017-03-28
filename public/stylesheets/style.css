@@ -25,6 +25,8 @@ display: flex;
 }
 .logout {
     font-size: 1em;
+    height: 60px;
+    border: none;
 }
 
 .header-text:hover,
@@ -84,6 +86,14 @@ h2 {
 
 }
 
+.index-photo-name {
+    margin-bottom: 1em;
+}
+
+.user-image {
+    /*height: 25em;*/
+    /*min-width: 25em;*/
+}
 .btn-primary {
     /*padding: */
 }
@@ -101,6 +111,8 @@ h2 {
 a:hover {
     text-decoration: none;
 }
+
+
 
 .info:hover,
 .edit:hover {
@@ -142,6 +154,79 @@ a:hover {
 .add-button {
     margin: 2em;
 }
+
+.placesPhoto {
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.placephoto {
+    /*margin-left: 10em;*/
+}
+.photo-center {
+    margin: 2em 2em 2em 0;
+    padding-bottom: 1em;
+    margin-left: 4em;
+}
+
+.placesshow {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.placesshow-header {
+    margin: 2em 0;
+}
+
+.placesshow-text {
+    font-size: 4em;
+    text-align: center;
+    color: black;
+    margin: 0.6em 0;
+    text-shadow: 2px 2px 5px #424242;
+
+}
+
+.placesshow-desc {
+    font-size: 2em;
+}
+
+.gps {
+    margin: 2em 0;
+}
+
+.gps-header {
+    font-size: 2em;
+}
+
+.gps-co {
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+.user-image {
+    width: 100%;
+}
+
+.places-showbtn {
+    /*margin: 2em;*/
+}
+
+
+
+/*.places-show-photo {
+    max-height: 30em;
+    max-width: 60em;
+    width: 100%;
+    float: left;
+
+}*/
+
+#map {
+    /*margin: 0 auto;*/
+}
+
 main {
     flex: 1 0 auto;
 }

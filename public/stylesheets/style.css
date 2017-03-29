@@ -5,9 +5,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-main {
-    flex: 1 0 auto;
-}
+
 
 a {
   color: #00B7FF;
@@ -33,9 +31,7 @@ h2 {
     text-shadow: 2px 2px 5px #e0e0e0 ;
 }
 
-footer {
-    position: relative;
-}
+
 
 /*------------------------------------------------------------*/
 /*These are in views/partials/loginheader file*/
@@ -229,4 +225,12 @@ footer {
 .placesPhoto {
     margin: 0 auto;
     width: 80%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    position: relative;
 }

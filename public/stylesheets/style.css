@@ -180,6 +180,10 @@ footer {
     margin-left: 4em;
 }
 
+.placesshowphotos {
+    min-height: 150px;
+}
+
 .gps {
     margin: 2em 0;
 }

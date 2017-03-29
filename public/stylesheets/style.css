@@ -145,6 +145,11 @@ footer {
     width: 100%;
 }
 
+.userindexphoto {
+    max-height: 200px;
+    min-height: 200px;
+}
+
 /*------------------------------------------------------------------*/
 /*These are from views/places/show file*/
 

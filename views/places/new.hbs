@@ -1,39 +1,37 @@
+<!-- This is for add new places form -->
+
+<!-- This will inclue the nav bar content from partial/header file -->
 {{>header}}
+
 <div class="col-md-6 new-place z-depth-4 hoverable">
-<form action="/{{user.id}}/places" method="POST">
-    <div>
-        <!-- <label for="name">Name: </label> -->
-        <input type="text" name="name" placeholder="Name" required>
-    </div>
-    <div >
-        <input type="number" name="longitude" placeholder="Longitude" required title="Must be a Number">
-    </div>
-    <div>
-        <input type="number" name="latitude" placeholder="Latitude" required title="Must be a number">
-    </div>
-    <div>
-        <input type="text" name="state" placeholder="State">
-    </div>
-    <div>
-        <!-- <label for="country">Country: </label> -->
-        <input type="text" name="country" placeholder="Country">
-    </div>
-    <div>
-        <!-- <label for="description">Description: </label> -->
-        <!-- <textarea name="description" cols="40" rows="5"></textarea> -->
-        <input type="text" rows="5" name="description" required placeholder="Description" class="flow-text">
-    </div>
-    <div>
-        <!-- <label for="url">Url: </label> -->
-        <input type="url" name="url" required placeholder="Image Url" pattern="https?://.+">
-    </div>
-    <div class="add-button center col-md-12">
-        <input type="submit" value="Add" class="btn btn-success">
-        <a href="/{{user.id}}" class="btn btn-danger">Cancel</a>
-    </div>
-
-    </div>
+    <form action="/{{user.id}}/places" method="POST">
+        <div>
+            <input type="text" name="name" placeholder="Name" required>
+        </div>
+        <div >
+            <input type="text" name="longitude" placeholder="Longitude" required title="Must be a Number">
+        </div>
+        <div>
+            <input type="text" name="latitude" placeholder="Latitude" required title="Must be a number">
+        </div>
+        <div>
+            <input type="text" name="state" placeholder="State">
+        </div>
+        <div>
+            <input type="text" name="country" placeholder="Country">
+        </div>
+        <div>
+            <input type="text" rows="5" name="description" required placeholder="Description" class="flow-text">
+        </div>
+        <div>
+            <!-- Validates the url based on the pattren -->
+            <input type="url" name="url" required placeholder="Image Url" pattern="https?://.+">
+        </div>
+        <div class="add-button center col-md-12">
+            <!-- when you click on add it go to th post router in places.js -->
+            <input type="submit" value="Add" class="btn btn-success">
+            <!-- When you click on cancle it will take you back to that previous page -->
+            <a href="/{{user.id}}" class="btn btn-danger">Cancel</a>
+        </div>
     </form>
-
-
 </div>

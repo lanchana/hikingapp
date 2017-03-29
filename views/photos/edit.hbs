@@ -11,7 +11,7 @@
     <div>
         <!-- <label for="photoUrl">URL: </label> -->
         <!-- <input type="text" name="photoUrl" value="{{this.photo_url}}" required placeholder="Photo Url" pattern="https?://.+"> -->
-        <img class="col-md-12 col-sm-12 col-xs-12" src="{{this.photo_url}}">
+        <img class="col-md-12 col-sm-12 col-xs-12 placesshowphotos" src="{{this.photo_url}}">
     </div>
     <div class="center ">
         <form action="/{{../userId}}/{{../placesId}}/photos/{{this.id}}?_method=DELETE" method="POST">

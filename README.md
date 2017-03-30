@@ -62,6 +62,8 @@
 #### Todo
 * ~~Add a page where guests can see all hiking trail information.~~
 * Allow user to share there hiking experience.
+* ~~Display a message when user couldn't able to signup.~~
+* ~~Display a message when user couldn't able to login.~~
 
 ---
 

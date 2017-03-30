@@ -16,13 +16,13 @@ function loginUser(req, res, next) {
     .then((foundUser) => {
         if(foundUser == null) {
             // When user gives the wrong email, it will redirect in to login page
-            res.redirect('/');
+            req.error = 'Invalid User Name';
         } else if(bcrypt.compareSync(password, foundUser.password)) {
             // if email id is coreect then this block cheks for password, if it finds the matchthen it retuns the founduser data
             req.session.currentUser = foundUser;
         } else {
             // if it doesnt find the right password then it will redirect to main page
-            res.redirect('/');
+            req.error = 'Invalid password'
         }
         next();
     })

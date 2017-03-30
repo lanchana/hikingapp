@@ -1,32 +1,30 @@
-<div>
+<!-- This will add the nav bar from header partial -->
+{{>header}}
+
+<main>
     {{#each photos}}
-<div class="col-md-3 col-sm-6 col-xs-12 z-depth-4 hoverable new-photo">
-    <div class="center">
-<h4 class="col-md-12 col-sm-12" >{{this.name}}</h4>
-
-
-        <!-- <label for="name">Name: </label> -->
-        <!-- <input type="text" name="name" value={{this.name}} placeholder="Name"> -->
-    </div>
-    <div>
-        <!-- <label for="photoUrl">URL: </label> -->
-        <!-- <input type="text" name="photoUrl" value="{{this.photo_url}}" required placeholder="Photo Url" pattern="https?://.+"> -->
-        <img class="col-md-12 col-sm-12 col-xs-12 placesshowphotos" src="{{this.photo_url}}">
-    </div>
-    <div class="center ">
-        <form action="/{{../userId}}/{{../placesId}}/photos/{{this.id}}?_method=DELETE" method="POST">
-
-    <input type="submit" Value="Delete" class="btn btn-danger add-button">
-</form>
-    </div>
-
-</div>
-
-
+        <!-- It get all the pg=hotos for the sected place to delete -->
+        <div class="col-md-3 col-sm-6 col-xs-12 z-depth-4 hoverable new-photo">
+            <div class="center">
+                <h4 class="col-md-12 col-sm-12" >{{this.name}}</h4>
+            </div>
+            <div>
+                <img class="col-md-12 col-sm-12 col-xs-12 placesshowphotos" src="{{this.photo_url}}">
+            </div>
+            <div class="center ">
+                <!-- It will redirect into the same page after deleting, which allows the you delete more photos without
+                going back and forth -->
+                <form action="/{{../userId}}/{{../placesId}}/photos/{{this.id}}?_method=DELETE" method="POST">
+                    <input type="submit" Value="Delete" class="btn btn-danger add-button">
+                </form>
+            </div>
+        </div>
     {{/each}}
-</div>
+</main>
+
+<!-- This will take you back to the previous page -->
 <div class = "center">
-<form action="/{{userId}}/places/{{placesId}}/show">
+    <form action="/{{userId}}/places/{{placesId}}/show">
         <input type="submit" value="Back" class="btn btn-success add-button center">
     </form>
-    </div>
+</div>

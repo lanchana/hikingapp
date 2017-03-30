@@ -52,6 +52,7 @@ app.use('/', users);
 app.use('/:userId/places/', placesRoute);
 app.use('/:userId/:placesId/photos/', photosRoute);
 app.use('/:placesId/photos/', photosRoute);
+app.use('/galary', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

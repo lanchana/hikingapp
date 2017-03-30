@@ -60,7 +60,7 @@
 * [Trello](https://trello.com/b/r1bC84tY)- for project planning and user stories.
 
 #### Todo
-* Add a page where guests can see all hiking trail information.
+* ~~Add a page where guests can see all hiking trail information.~~
 * Allow user to share there hiking experience.
 
 ---

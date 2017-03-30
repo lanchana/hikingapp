@@ -22,11 +22,13 @@ router.get('/signup', (req, res) => {
     res.render('users/signup');
 });
 
+// This is called for view galalry on login page
 router.get('/galary', (req, res) => {
     User.find({})
     .exec((err, users) => {
         if(err) console.log(err);
          res.render('users/show', {
+            // it senda the information of all users
             user: users
          });
     });

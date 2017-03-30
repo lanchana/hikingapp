@@ -22,6 +22,16 @@ router.get('/signup', (req, res) => {
     res.render('users/signup');
 });
 
+router.get('/galary', (req, res) => {
+    User.find({})
+    .exec((err, users) => {
+        if(err) console.log(err);
+         res.render('users/show', {
+            user: users
+         });
+    });
+});
+
 // It call the helpers auth file to validate the user cradentials
 router.get('/:id', authHelper.createSecure, (req, res) => {
     User.findById(req.params.id)

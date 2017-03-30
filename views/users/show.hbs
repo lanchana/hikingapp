@@ -1,8 +1,9 @@
-
 <main class="main-image">
+    <!-- Gets all the user information -->
     {{#each user}}
+        <!-- Gets all places information for each user -->
         {{#each this.places}}
-            <!-- <div class="row center"> -->
+            <!-- Gets all phots for each place -->
             <div>
                 <div class="col-sm-6 col-md-4 center ">
                     <div class="thumbnail card-panel hoverable ">
@@ -10,6 +11,7 @@
                         <div class="caption">
                             <h3 class="text-uppercase ">{{this.name}}</h3>
                             <form action="/{{../this.id}}/places/{{this.id}}/galary">
+                                <!-- Redirects to galary places page to display all places info -->
                                 <input type="submit" name="" class="btn btn-default info" role="button" value="Info">
                             </form>
                         </div>
@@ -18,11 +20,11 @@
             </div>
         {{/each}}
     {{/each}}
-
 </main>
 
 <div class="col-md-12 galary-back-btn center">
     <form action="/">
+        <!-- This will take you back to user show page -->
         <input type="submit" name="" class="btn btn-default" value="Back">
     </form>
 </div>

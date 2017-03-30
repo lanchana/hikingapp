@@ -112,6 +112,10 @@ h2 {
     width: 100%;
 }
 
+.signinerror {
+    color: red;
+}
+
 /*------------------------------------------------------------------*/
 /*These are in views/user/index*/
 

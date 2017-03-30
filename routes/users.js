@@ -67,7 +67,9 @@ router.post('/', authHelper.createSecure, (req, res) => {
                 res.render('users/login');
             })
         } else {
-            res.render('users/signup');
+            res.render('users/signup', {
+                error1: "This email is already registered"
+            });
         }
     });
 

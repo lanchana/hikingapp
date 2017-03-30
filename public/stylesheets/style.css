@@ -227,6 +227,17 @@ h2 {
     width: 80%;
 }
 
+.galary-back-btn {
+    margin: 1em 0;
+    /*float: none;*/
+    /*position: relative;*/
+    /*margin: 0 auto;*/
+}
+
+.galary-view-btn {
+    margin: 3em 30em;
+}
+
 main {
     flex: 1 0 auto;
 }

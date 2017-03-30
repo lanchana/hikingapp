@@ -238,6 +238,8 @@ h2 {
 }
 
 .galary-view-btn {
-    margin: 3em 30em;
+    position: absolute;
+    left: 45em;
+    bottom: 4em;
 }
 

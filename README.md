@@ -1,7 +1,8 @@
 #### General Assembly: Full Stack Web-Developer
 ---
 # Hiking Trails - Full Stack Web App
-
+    Hiking trails promote a healthy outdoor lifestyle. It helps users to find, customize, record and share outdoor activities.
+    
 #### Features
 * Allows user to create an account and login using the email id.
 * User can save their hiking memories, along with description and photos.
@@ -47,6 +48,9 @@
     
 #### Deployed
 * My App is deployed On Heroku. Click [here](https://morning-tor-53182.herokuapp.com/) to see.
+
+#### Portfolio
+* Click [here](http://lanchana.bitballoon.com) to see my portfolio
 
 #### Attributions
 * Bootstrap

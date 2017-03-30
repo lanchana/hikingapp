@@ -35,6 +35,21 @@ router.get('/:id/show', (req, res) => {
     });
 });
 
+router.get('/:id/galary', (req, res) => {
+    // finds particular user based on userId
+    User.findById(req.params.userId)
+    .exec((err, user) => {
+        if(err) console.log(err);
+        // assigns all the information of particular place to the places
+        const places = user.places.id(req.params.id);
+        // It gets the places show file
+        res.render('galary/place', {
+            places: places,
+            user: req.params.userId
+        });
+    });
+});
+
 // This router is called when user wants to edit the places info
 router.get('/:id/edit', (req, res) => {
     User.findById(req.params.userId)

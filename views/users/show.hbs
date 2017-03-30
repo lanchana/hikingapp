@@ -1,0 +1,28 @@
+
+<main class="main-image">
+    {{#each user}}
+        {{#each this.places}}
+            <!-- <div class="row center"> -->
+            <div>
+                <div class="col-sm-6 col-md-4 center ">
+                    <div class="thumbnail card-panel hoverable ">
+                        <img src="{{this.place_url}}" alt="Place_image" class=" col-md-12 index-photo-name userindexphoto">
+                        <div class="caption">
+                            <h3 class="text-uppercase ">{{this.name}}</h3>
+                            <form action="/{{../this.id}}/places/{{this.id}}/galary">
+                                <input type="submit" name="" class="btn btn-default info" role="button" value="Info">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    {{/each}}
+
+</main>
+
+<div class="col-md-12 galary-back-btn center">
+    <form action="/">
+        <input type="submit" name="" class="btn btn-default" value="Back">
+    </form>
+</div>

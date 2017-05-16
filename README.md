@@ -12,13 +12,7 @@
 #### ERDs
 * ##### User table:
 
-    ![alt tag](https://raw.githubusercontent.com/lanchana/hikingapp/master/ERDs/user.png)
-* ##### Places table:
-
-    ![alt tag](https://raw.githubusercontent.com/lanchana/hikingapp/master/ERDs/places.png)
-* ##### Photos table:
-
-    ![alt tag](https://raw.githubusercontent.com/lanchana/hikingapp/master/ERDs/photos.png)
+    ![alt tag](https://raw.githubusercontent.com/lanchana/hikingapp/master/ERDs/hikingtrail-erd.png)
 
 #### Wireframe
 * ##### Login Screen:

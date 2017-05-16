@@ -47,6 +47,11 @@
     .login {
         margin: 1em 13em;
     }
+
+    .galary-view-btn {
+        position: static;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 735px) {
@@ -54,14 +59,26 @@
         margin: 1em 10em;
         margin-right: 0;
     }
+
+    .galary-view-btn {
+        position: static;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 730px) {
     .login-container {
         margin-right: 0;
+        margin: 0 auto;
     }
 
     .login {
-        margin: 1em 0em;
+        /*margin: 1em 0em;*/
+        margin: 0 auto;
+    }
+
+    .galary-view-btn {
+        position: static;
+        margin: 0 auto;
     }
 }
